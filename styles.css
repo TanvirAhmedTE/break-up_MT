@@ -1,0 +1,136 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #FFDEE9 20%, #B5FFFC);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.heart-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.heart {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: rotate(45deg);
+}
+
+.heart-part {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    background: radial-gradient(circle at top left, #FF2442 50%, #8B0000);
+    clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.left-part {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 50%);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.right-part {
+    clip-path: polygon(0 0, 100% 0%, 100% 50%, 0 100%);
+    right: 50%;
+    transform: translateX(50%) rotate(180deg);
+}
+
+.name {
+    font-size: 2rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.bandage {
+    width: 180px;
+    height: 40px;
+    background: #E2B448;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    border-radius: 5px;
+    cursor: grab;
+    transform: rotate(-20deg);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    background-image: linear-gradient(to right, #F3D687 20%, #F1C40F 50%, #F3D687 80%);
+    border: 2px solid #B8860B;
+    background-size: 200% 200%;
+}
+
+.bandage::before, .bandage::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background: #D9982F;
+    top: 0;
+    border-radius: 5px;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.bandage::before {
+    left: -20px;
+    transform: rotate(-10deg);
+}
+
+.bandage::after {
+    right: -20px;
+    transform: rotate(10deg);
+}
+
+.message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #B30000;
+    z-index: 1;
+    font-family: 'Courier New', monospace;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.message-text p {
+    margin: 0;
+}
+
+.bleeding {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,0,0,0.5) 20%, transparent 70%);
+    opacity: 0.7;
+    z-index: 0;
+}
